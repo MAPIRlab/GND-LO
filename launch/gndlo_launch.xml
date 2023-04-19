@@ -1,0 +1,46 @@
+<launch>
+
+    ### GNDLO ODOMETRY ###
+    <node name="gndlo" pkg="gndlo" exec="gndlo_odom" output="screen">
+		<param name="subs_topic" value="/kitti" />
+
+		<param name="num_threads" value="8" />
+		<param name="valid_ratio" value="0.8" />
+
+		<param name="flag_verbose" value="true" />
+		<param name="flag_flat_blur" value="true" />
+		<param name="flag_solve_backforth" value="true" />
+		<param name="flag_filter" value="true" />
+
+		<param name="select_radius" value="1" />
+		<param name="gaussian_sigma" value="-1." />
+
+		<param name="quadtrees_avg" value="0.1" />
+		<param name="quadtrees_std" value="0.015" />
+		<param name="quadtrees_min_lvl" value="1" />
+		<param name="quadtrees_max_lvl" value="5" />
+
+		<param name="count_goal" value="50." />
+		<param name="starting_size" value="4" />
+
+		<param name="ground_threshold_deg" value="10." />
+		<param name="wall_threshold_deg" value="10." />
+
+		<param name="iterations" value="20" />
+		<param name="huber_loss" value="3e-5" />
+		<param name="trans_bound" value="100." />
+
+		<param name="pix_threshold" value="5." />
+		<param name="trans_threshold" value="0.0" />
+		<param name="rot_threshold" value="0.0" />
+
+		<param name="filter_kd" value="500." />
+		<param name="filter_pd" value="3." />
+		<param name="filter_kf" value="0." />
+		<param name="filter_pf" value="0." />
+
+		<param name="flag_save_results" value="false" />
+		<param name="results_file_name" value="/path/to/results.dat" />
+    </node>
+
+</launch>
