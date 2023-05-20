@@ -35,7 +35,7 @@ The launch file allows adjusting the parameters without needing to rebuild. Now 
 * results_file_name: file name of the results if the flag_save_results is set to true.
 
 ## More information on the input topics
-TODO: upload and mention the rosbags
+Download the ROS2 bags: https://uma365-my.sharepoint.com/:f:/g/personal/0619166273_uma_es/EoQ89QoqmdJAu3pm4E4W-zABHmV9lO0FPr2iRR8UQzpkCQ?e=r2KD8R
 Images are obtained from the KITTI dataset using a spherical projection with a 1000x64 resolution, vertical angle from 2º to -24.8º, and horizontal from 180º to -180º. 
 The sensor information is stored in a sensor_msgs/LaserScan in the following manner:
 * LaserScan.range_min = rows of the image.
