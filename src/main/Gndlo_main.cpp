@@ -49,7 +49,7 @@ class GNDLO_Node : public rclcpp::Node, public GNDLO_Lidar
 
 		// Synchronize subscribers
 		sync_ = std::make_shared<message_filters::TimeSynchronizer<sensor_msgs::msg::Image, sensor_msgs::msg::LaserScan>>(image_sub_, info_sub_, 20);
-    	sync_->registerCallback(std::bind(&GNDLO_Node::image_callback, this, placeholders::_1, placeholders::_2));
+    	sync_->registerCallback(std::bind(&GNDLO_Node::image_callback, this, std::placeholders::_1, std::placeholders::_2));
 
 		// Open file to save results
 		if (options.flag_save_results)
