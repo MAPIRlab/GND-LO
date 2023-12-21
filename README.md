@@ -1,9 +1,33 @@
 # GND-LO
-Ground Decoupled 3D Lidar Odometry based on Planar Patches. TODO: include paper.
+Ground Decoupled 3D Lidar Odometry based on Planar Patches. See paper [here](https://ieeexplore.ieee.org/abstract/document/10243099).
+Cite as:
+```
+@ARTICLE{gndlo,
+  author={Galeote-Luque, Andres and Ruiz-Sarmiento, Jose-Raul and Gonzalez-Jimenez, Javier},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={GND-LO: Ground Decoupled 3D Lidar Odometry Based on Planar Patches}, 
+  year={2023},
+  volume={8},
+  number={11},
+  pages={6923-6930},
+  doi={10.1109/LRA.2023.3313057}}
+```
 
 ## Introduction
 This repository includes a ROS2 node that subscribes to a pair of message topics (image and sensor information) and publishes the resulting odometry. 
-To use it, clone into your ROS2 workspace and build as usual. The included launch and rviz file should provide enough information to make it run. 
+[Ceres](http://ceres-solver.org/) must be installed for GND-LO to work.
+
+To use GND-LO, clone into your ROS2 workspace and build as usual. 
+```
+cd ros2_ws/src
+git clone https://github.com/MAPIRlab/GND-LO
+cd ..
+colcon build --packages-select gndlo
+```
+The included launch and rviz file should provide enough information to make it run. 
+```
+ros2 launch gndlo gndlo_launch.xml
+```
 
 ## Parameters
 The launch file allows adjusting the parameters without needing to rebuild. Now for a brief explanation of the available parameters:
